@@ -26,10 +26,5 @@ class NavigationHelper {
     context.push(page, extra: params);
   }
 
-  static void goToLogin(BuildContext context) =>
-      goToPage(context, AppRoutes.login);
-
-  static void goToSignUp(BuildContext context) =>
-      goToPage(context, AppRoutes.register);
 
 }

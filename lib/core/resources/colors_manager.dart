@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 
 class ColorsManager {
-  static const Color primary = Color(0xFF00A2BD);
+  static const Color primary = Color(0xffE2BE7F);
+  static const Color onboardingcolor = Color(0xff202020);
   static const Color buttonTextPrimary = Color(0xFF325F98);
   static const Color primaryLight = Color(0xFF4DA3FF);
   static const Color primaryDark = Color(0xFF003D80);
   static const Color smallDivider = Color(0xFFCFDAE8);
-
 
   static const Color secondary = Color(0xFFFFA000);
   static const Color secondaryLight = Color(0xFFFFD149);
@@ -29,12 +29,10 @@ class ColorsManager {
   static const Color lightGrey2 = Color(0xFFEDEDED);
   static const Color darkGrey = Color(0xFF616161);
 
-
   //orders
 
   static const Color workingOnIt = Color(0xffFEF8E8);
-  static const Color workingOnItText = Color(0xFFF4BB1B); 
-  static const Color done = Color(0xFFECF7FF); 
+  static const Color workingOnItText = Color(0xFFF4BB1B);
+  static const Color done = Color(0xFFECF7FF);
   static const Color canceled = Color(0xFFFEEBEB);
-  
 }

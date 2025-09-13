@@ -4,14 +4,14 @@ import '../global/global_exports.dart';
 class Validators {
   static String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return strings.validationEmailRequired;
+      return strings (context).validationEmailRequired;
     }
 
     const pattern = r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$';
     final regex = RegExp(pattern);
 
     if (!regex.hasMatch(value.trim())) {
-      return strings.validationInvalidEmail;
+      return strings (context).validationInvalidEmail;
     }
 
     return null;
@@ -19,11 +19,11 @@ class Validators {
 
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return strings.validationPasswordRequired;
+      return strings (context).validationPasswordRequired;
     }
 
     if (value.length < 6) {
-      return strings.validationPasswordLength;
+      return strings (context).validationPasswordLength;
     }
 
     return null;
@@ -31,11 +31,11 @@ class Validators {
 
   static String? validateConfirmPassword(String? value, String password) {
     if (value == null || value.isEmpty) {
-      return strings.validationConfirmPasswordRequired;
+      return strings (context).validationConfirmPasswordRequired;
     }
 
     if (value != password) {
-      return strings.validationPasswordMismatch;
+      return strings (context).validationPasswordMismatch;
     }
 
     return null;
@@ -43,11 +43,11 @@ class Validators {
 
   static String? validateName(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return strings.validationNameRequired;
+      return strings (context).validationNameRequired;
     }
 
     if (value.length < 2) {
-      return strings.validationNameLength;
+      return strings (context).validationNameLength;
     }
 
     return null;
@@ -55,14 +55,14 @@ class Validators {
 
   static String? validatePhone(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return strings.validationPhoneRequired;
+      return strings (context).validationPhoneRequired;
     }
 
     final pattern = r'^01[0-2,5]{1}[0-9]{8}$';
     final regex = RegExp(pattern);
 
     if (!regex.hasMatch(value.trim())) {
-      return strings.validationInvalidPhone;
+      return strings (context).validationInvalidPhone;
     }
 
     return null;
@@ -70,7 +70,7 @@ class Validators {
 
   static String? validateNotEmpty(String? value, {String fieldName = "هذا الحقل"}) {
     if (value == null || value.trim().isEmpty) {
-      return '$fieldName ${strings.validationRequired}';
+      return '$fieldName ${strings (context).validationRequired}';
     }
     return null;
   }

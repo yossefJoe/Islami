@@ -10,25 +10,25 @@ class ErrorHandler {
 
       if (res != null && res.data is Map<String, dynamic>) {
         final data = res.data as Map<String, dynamic>;
-        return data['message'] ?? data['error'] ?? strings.serverError;
+        return data['message'] ?? data['error'] ?? strings (context).serverError;
       }
 
       switch (error.type) {
         case DioExceptionType.connectionTimeout:
         case DioExceptionType.receiveTimeout:
         case DioExceptionType.sendTimeout:
-          return strings.timeout;
+          return strings (context).timeout;
         case DioExceptionType.badResponse:
-          return strings.badResponse;
+          return strings (context).badResponse;
         case DioExceptionType.cancel:
-          return strings.cancelled;
+          return strings (context).cancelled;
         case DioExceptionType.connectionError:
-          return strings.connectionError;
+          return strings (context).connectionError;
         default:
-          return strings.unexpectedError;
+          return strings (context).unexpectedError;
       }
     }
 
-    return strings.unknownError;
+    return strings (context).unknownError;
   }
 }

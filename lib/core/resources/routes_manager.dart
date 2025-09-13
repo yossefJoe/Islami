@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quraan/core/constants/app_keys.dart';
 import 'package:quraan/core/constants/routes.dart';
+import 'package:quraan/nav_bar_view.dart';
 
-import '../../features/Auth/presentation/views/pages/login_screen.dart';
 import '../../features/onboarding/pages/onboarding_screen.dart';
 import '../services/get_storage_service.dart';
 
@@ -21,11 +21,11 @@ class RoutesManager {
             (context, state) =>
                 LocalStorageService.read(AppKeys.onboardingSeen) == null
                     ? const OnboardingScreen()
-                    : const LoginScreen(),
+                    : const NavBarView(),
       ),
       GoRoute(
-        path: AppRoutes.login,
-        builder: (context, state) => const LoginScreen(),
+        path: AppRoutes.navBar,
+        builder: (context, state) => const NavBarView(),
       ),
       // GoRoute(
       //   path: orderInfo,

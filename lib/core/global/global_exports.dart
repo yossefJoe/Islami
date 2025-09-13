@@ -14,7 +14,7 @@ final NetworkInfo networkInfo = sl<NetworkInfo>();
 
 Future<bool> get hasConnection async => await  networkInfo.isConnected;
 BuildContext get context => AppContext.context;
-AppLocalizations get strings => AppLocalizations.of(context)!;
+AppLocalizations strings(BuildContext context) => AppLocalizations.of(context)!;
 String languageCode = Localizations.localeOf(context).languageCode;
 
 

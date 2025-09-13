@@ -23,7 +23,7 @@ class SuccessDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-           Image.asset(AssetsManager.success, width: 100, height: 100,),
+          //  Image.asset(AssetsManager.success, width: 100, height: 100,),
             const SizedBox(height: 16),
             Text(title, style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 12),

@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:quraan/core/resources/colors_manager.dart';
 
 import '../widgets/onboarding_page_view.dart';
 
@@ -28,7 +28,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: OnboardingPageView(pageController: pageController));
+      backgroundColor: ColorsManager.onboardingcolor,
+      body: OnboardingPageView(pageController: pageController),
+    );
   }
 }
