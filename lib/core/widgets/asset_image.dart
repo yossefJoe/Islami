@@ -4,6 +4,7 @@ class CustomAssetImage extends StatelessWidget {
   final String assetPath;
   final double? width;
   final double? height;
+  final double? scale;
   final BoxFit fit;
   final BorderRadius? borderRadius;
   final Color? color;
@@ -16,6 +17,7 @@ class CustomAssetImage extends StatelessWidget {
     this.fit = BoxFit.cover,
     this.borderRadius,
     this.color,
+    this.scale,
   });
 
   @override
@@ -26,6 +28,7 @@ class CustomAssetImage extends StatelessWidget {
       width: width,
       height: height,
       fit: fit,
+      scale: scale,
     );
 
     return borderRadius != null

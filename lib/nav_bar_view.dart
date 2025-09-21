@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quraan/core/resources/colors_manager.dart';
 import 'package:quraan/core/resources/styles_manager.dart';
 import 'package:quraan/core/utils/extensions/extensions.dart';
+import 'package:quraan/features/quran/presentation/pages/quran_page.dart';
 import 'package:quraan/nav1.dart';
-
 import 'core/resources/assets_manager.dart';
 
 class NavBarView extends StatefulWidget {
@@ -15,7 +15,7 @@ class NavBarView extends StatefulWidget {
 }
 
 class _NavBarViewState extends State<NavBarView> {
-  List<Widget> pages = [Nav1(), Nav1(), Nav1(), Nav1(), Nav1()];
+  List<Widget> pages = [QuranPage(), Nav1(), Nav1(), Nav1(), Nav1()];
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -34,22 +34,6 @@ class _NavBarViewState extends State<NavBarView> {
           ],
         ),
       ),
-      // BottomNavigationBar(
-      //   backgroundColor: ColorsManager.primary,
-      //   items: [
-      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-      //     BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.favorite),
-      //       label: 'Favorites',
-      //     ),
-      //     BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.settings),
-      //       label: 'Settings',
-      //     ),
-      //   ],
-      // ),
       body: pages.elementAt(_currentIndex),
     );
   }

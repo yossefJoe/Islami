@@ -35,25 +35,24 @@ class _PageViewBodyState extends State<PageViewBody> {
     AssetsManager.onboarding4,
     AssetsManager.onboarding5,
   ];
-  List<String> titles = [
-    strings(context).changeLanguage,
-    strings(context).welcome_title,
-    strings(context).reading_quran_title,
-    strings(context).bearish_title,
-    strings(context).radio_title,
-
-  ];
-  List<String> subtitles = [
-      strings(context).changeLanguage,
-      strings(context).welcome_subtitle,
-      strings(context).reading_quran_subtitle,
-      strings(context).bearish_subtitle,      
-      strings(context).radio_subtitle,  
-
-  ];
 
   @override
   Widget build(BuildContext context) {
+    List<String> titles = [
+      strings(context).changeLanguage,
+      strings(context).welcome_title,
+      strings(context).reading_quran_title,
+      strings(context).bearish_title,
+      strings(context).radio_title,
+    ];
+    List<String> subtitles = [
+      strings(context).changeLanguage,
+      strings(context).welcome_subtitle,
+      strings(context).reading_quran_subtitle,
+      strings(context).bearish_subtitle,
+      strings(context).radio_subtitle,
+    ];
+
     return Padding(
       padding: 40.rPadding,
       child: Column(

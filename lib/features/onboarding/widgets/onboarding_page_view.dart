@@ -8,6 +8,7 @@ import '../../../core/constants/routes.dart';
 import '../../../core/global/global_exports.dart';
 import '../../../core/resources/assets_manager.dart';
 import '../../../core/utils/helpers/navigation_helper.dart';
+import '../../../core/widgets/base_logo_widget.dart';
 import '../../../core/widgets/custom_text.dart';
 import 'page_view_body.dart';
 
@@ -48,34 +49,7 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
             );
           },
         ),
-        Positioned(
-          top: 60.h,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: 150.h,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(AssetsManager.behindIslami),
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          top: 130.h,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: 70.h,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(AssetsManager.islami),
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-        ),
+        BaseLogoWidget(),
         Positioned(
           bottom: 20,
           left: 0,
@@ -98,31 +72,25 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
                 },
               ),
               DotsIndicatorWidget(position: _currentPage),
-              Align(
-                alignment:
-                    languageCode == 'ar'
-                        ? Alignment.topRight
-                        : Alignment.topLeft,
-                child: TextButton(
-                  onPressed: () {
-                    if (_currentPage < 4) {
-                      widget.pageController.nextPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeIn,
-                      );
-                    } else {
-                     NavigationHelper.goToPage(context, AppRoutes.navBar);
-                    }
-                  },
-                  child: CustomText(
-                    text:
-                        _currentPage.round() == 4
-                            ? strings (context).finish
-                            : strings (context).next,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: ColorsManager.primary,
-                  ),
+              TextButton(
+                onPressed: () {
+                  if (_currentPage < 4) {
+                    widget.pageController.nextPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                  } else {
+                    NavigationHelper.goToPage(context, AppRoutes.navBar);
+                  }
+                },
+                child: CustomText(
+                  text:
+                      _currentPage.round() == 4
+                          ? strings(context).finish
+                          : strings(context).next,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: ColorsManager.primary,
                 ),
               ),
             ],

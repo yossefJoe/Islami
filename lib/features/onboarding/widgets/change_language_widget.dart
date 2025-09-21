@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quraan/core/global/global_exports.dart';
 import 'package:quraan/core/resources/colors_manager.dart';
+import 'package:quraan/core/services/get_storage_service.dart';
 
+import '../../../core/constants/app_keys.dart';
 import '../../../core/resources/assets_manager.dart';
 
-class ChangeLanguageWidget extends StatefulWidget {
-  const ChangeLanguageWidget({Key? key}) : super(key: key);
+class ChangeLanguageWidget extends ConsumerStatefulWidget {
+  const ChangeLanguageWidget({super.key});
 
   @override
-  State<ChangeLanguageWidget> createState() => _ChangeLanguageWidgetState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _ChangeLanguageWidgetState();
 }
 
-class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
+class _ChangeLanguageWidgetState extends ConsumerState<ChangeLanguageWidget> {
   String selected = languageCode == 'en' ? 'US' : 'YE';
 
   @override
@@ -33,13 +37,29 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
     );
   }
 
+  String determineLanguage(String languageCode) {
+    if (languageCode == 'US') {
+      return 'en';
+    } else {
+      return 'ar';
+    }
+  }
+
   Widget buildLanguage(String language, String icon) {
     return Expanded(
       child: GestureDetector(
         onTap: () {
           setState(() {
             selected = language;
+            print(language);
           });
+          ref.read(appLanguageNotifier.notifier).state = Locale(
+            determineLanguage(language),
+          );
+          LocalStorageService.write(
+            AppKeys.appLanguage,
+            determineLanguage(language),
+          );
         },
         child: Container(
           decoration: BoxDecoration(
@@ -47,16 +67,10 @@ class _ChangeLanguageWidgetState extends State<ChangeLanguageWidget> {
                 selected == language
                     ? ColorsManager.primary
                     : Colors.transparent,
-            borderRadius:
-                selected == "US"
-                    ? BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
-                    )
-                    : BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
-                    ),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10),
+              bottomLeft: Radius.circular(10),
+            ),
           ),
 
           child: Image.asset(icon, width: 20),

@@ -8,6 +8,10 @@ class AssetsManager {
   static const String onboarding5 = "$_imagesPath/onboarding5.png";
   static const String islami = "$_imagesPath/Islami.png";
   static const String behindIslami = "$_imagesPath/Mosque-01 1.png";
+  static const String quranBackground = "$_imagesPath/quranBackground.png";
+  static const String surah = "$_imagesPath/surah.png";
+  static const String surahnumber = "$_imagesPath/surahnumber.png";
+  static const String hadithBackground = "$_imagesPath/hadithBackground.png";
 
   //Icons
 

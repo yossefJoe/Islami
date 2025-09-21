@@ -35,7 +35,14 @@
   "bearish_title": "Bearish",
   "bearish_subtitle": "Praise the name of your Lord, the Most High",
   "radio_title": "Holy Quran Radio",
-  "radio_subtitle": "You can listen to the Holy Quran Radio through the application for free and easily"
+  "radio_subtitle": "You can listen to the Holy Quran Radio through the application for free and easily",
+  "hadith": "Hadith",
+  "quran": "Quran",
+  "tasbeeh": "Tasbeeh",
+  "radio": "Radio",
+  "time": "Time"
+
+
     
  
      }

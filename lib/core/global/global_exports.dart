@@ -1,6 +1,7 @@
 // lib/core/global/global_exports.dart
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:quraan/injection/service_locator.dart';
 
@@ -12,9 +13,8 @@ final GetStorage storage = GetStorage();
 
 final NetworkInfo networkInfo = sl<NetworkInfo>();
 
-Future<bool> get hasConnection async => await  networkInfo.isConnected;
+Future<bool> get hasConnection async => await networkInfo.isConnected;
 BuildContext get context => AppContext.context;
 AppLocalizations strings(BuildContext context) => AppLocalizations.of(context)!;
+final appLanguageNotifier = StateProvider<Locale?>((ref) => null);
 String languageCode = Localizations.localeOf(context).languageCode;
-
-

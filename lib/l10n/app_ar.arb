@@ -27,7 +27,6 @@
 "next":"التالي",
           "finish":"انتهاء",
 "changeLanguage":"تغيير اللغة",
-          "welcome_title": "مرحبا بكم في Islami",
    "welcome_title": "مرحبًا بك في إسلامي",
   "welcome_subtitle": "سعداء بوجودك معنا",
   "reading_quran_title": "قراءة القرآن",
@@ -35,7 +34,12 @@
   "bearish_title": "تسبيح",
   "bearish_subtitle": "سبح اسم ربك الأعلى",
   "radio_title": "إذاعة القرآن الكريم",
-  "radio_subtitle": "يمكنك الاستماع إلى إذاعة القرآن الكريم من خلال التطبيق مجانًا وبسهولة"
+  "radio_subtitle": "يمكنك الاستماع إلى إذاعة القرآن الكريم من خلال التطبيق مجانًا وبسهولة",
+  "hadith": "الحديث",
+  "quran": "القرآن",
+  "tasbeeh": "التسبيح",
+  "radio": "الإذاعة",
+  "time": "الوقت"
 
     
      }

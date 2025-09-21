@@ -55,10 +55,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: TextFormField(
+        
         readOnly: widget.readOnly,
         initialValue: widget.initialValue ?? "",
         maxLines: widget.maxLines ?? 1,
-        cursorColor: ColorsManager.buttonTextPrimary,
+        cursorColor: ColorsManager.primary,
         onChanged: widget.onChanged,
         inputFormatters: widget.inputFormatters ?? [],
         focusNode: widget.focusNode,
@@ -67,67 +68,61 @@ class _CustomTextFieldState extends State<CustomTextField> {
         keyboardType: widget.inputType,
         obscureText: widget.obscureText ? !isPasswordVisible : false,
         decoration: InputDecoration(
+          
           hintText: widget.hint,
           hintStyle: TextStyle(
-              color: ColorsManager.lightGrey,
-              fontWeight: FontWeight.bold,
-              fontSize: 16.sp),
+            color: ColorsManager.lightGrey,
+            fontWeight: FontWeight.bold,
+            fontSize: 16.sp,
+          ),
           prefixIcon: widget.prefix,
-          filled: true,
-          fillColor: Colors.white,
-          suffixIcon: widget.obscureText
-              ? IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isPasswordVisible = !isPasswordVisible;
-                    });
-                  },
-                  icon: Icon(
-                    isPasswordVisible
-                        ? Icons.visibility_off_rounded
-                        : Icons.visibility_rounded,
-                  ),
-                )
-              : widget.suffix,
-          contentPadding: EdgeInsets.symmetric(
-              horizontal: 5, vertical: (widget.maxLines ?? 1) > 1 ? 10 : 0),
+          suffixIcon:
+              widget.obscureText
+                  ? IconButton(
+                    onPressed: () {
+                      setState(() {
+                        isPasswordVisible = !isPasswordVisible;
+                      });
+                    },
+                    icon: Icon(
+                      isPasswordVisible
+                          ? Icons.visibility_off_rounded
+                          : Icons.visibility_rounded,
+                    ),
+                  )
+                  : widget.suffix,
+          contentPadding: EdgeInsets.all(10),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(
-              width: 1,
-              color: ColorsManager.buttonTextPrimary,
+              width: 2,
+              color: ColorsManager.primary,
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(
-              width: 1,
-              color: ColorsManager.lightGrey,
+              width: 2,
+              color: ColorsManager.primary,
             ),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(
-              width: 1,
-              color: ColorsManager.lightGrey,
+              width: 2,
+              color: ColorsManager.primary,
             ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(
-              width: 1,
-              color: ColorsManager.error,
-            ),
+            borderSide: const BorderSide(width: 1, color: ColorsManager.error),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(
-              width: 1,
-              color: ColorsManager.error,
-            ),
+            borderSide: const BorderSide(width: 1, color: ColorsManager.error),
           ),
         ),
-        style: const TextStyle(color: Colors.black),
+        style: const TextStyle(color: Colors.white),
       ),
     );
   }
